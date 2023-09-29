@@ -13,7 +13,7 @@ const Banner = () => {
             {
                 bannerInfo.map((info) =>
                     <div id={`slide${parseInt(info.id)}`} key={info.id} className="carousel-item relative w-full">
-                        <div className='md:flex bg-red-200 md:w-full'>
+                        <div className='md:flex bg-teal-200 md:w-full'>
                             <img src={info.image} className="md:w-6/12" />
                             <div className='md:w-6/12 text-center grid grid-cols content-center   '>
                                 <h1 className='text-5xl'>OUR BEST CHEFS</h1>
