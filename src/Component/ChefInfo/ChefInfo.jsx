@@ -4,7 +4,7 @@ import ChefInfoCard from '../ChefInfoCard/ChefInfoCard';
 const ChefInfo = () => {
     const [chefInfo, setChefInfo] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:3000/chefInfo')
+        fetch('https://tasty-meal-server.vercel.app/chefInfo')
             .then(res => res.json())
             .then(data => setChefInfo(data))
             .catch((err) => console.log(err));

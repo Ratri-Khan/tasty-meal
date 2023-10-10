@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 const FoodProcess = () => {
 const [process, setProcess] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:3000/processingInfo')
+        fetch('https://tasty-meal-server.vercel.app/processingInfo')
             .then(res => res.json())
             .then(data => setProcess(data))
             .catch((err) => console.log(err));
