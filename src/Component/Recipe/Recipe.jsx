@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import { FaHeart } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Recipe = ({ recipe }) => {
     const { image, name, description, like, recipes, experience, recipeName, recipeImage, ingredients } = recipe;
+    const [disable,setDisable] = useState(false);
 
     const notify = () => {
-        toast("My Favorite");}
+        setDisable(toast("My Favorite"))
+    }
     return (
         <div className='bg-black'>
             <div className='flex w-4/4 bg-teal-200'>
@@ -27,7 +29,7 @@ const Recipe = ({ recipe }) => {
                         <h2 className='text-3xl font-bold'>{recipeName.name1}</h2>
                         <p className='py-5'>Ingredient : {ingredients.ingredient1}</p>
 
-                        <button onClick={notify} className="btn bg-black text-white w-full">Favorite</button>
+                        <button onClick={notify} disabled={disable} className="btn bg-black text-white w-full">Favorite</button>
                         <ToastContainer />
 
                     </div>
