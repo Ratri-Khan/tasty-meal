@@ -27,11 +27,12 @@ const Register = () => {
         createUser(email,password)
         .then(result =>{
             const createdUser = result.user;
+            console.log(createUser);
             updateUserProfile({
                 displayName: displayName,
                 photoURL: displayURL
             })
-            console.log(createUser);
+            
         })
         .catch(error => {
             console.log(error);

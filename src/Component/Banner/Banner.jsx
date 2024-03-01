@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import { FaHeart } from "react-icons/fa";
+import { AiFillHeart } from "react-icons/ai";
 const Banner = () => {
     const [bannerInfo, setBannerInfo] = useState([]);
     useEffect(() => {
@@ -13,14 +13,14 @@ const Banner = () => {
             {
                 bannerInfo.map((info) =>
                     <div id={`slide${parseInt(info.id)}`} key={info.id} className="carousel-item relative w-full">
-                        <div className='md:flex bg-teal-200 md:w-full'>
+                        <div className='md:flex lg:flex bg-teal-200 md:w-full lg:full'>
                             <img src={info.image} className="md:w-6/12" />
-                            <div className='md:w-6/12 text-center grid grid-cols content-center   '>
-                                <h1 className='text-5xl'>OUR BEST CHEFS</h1>
+                            <div className='md:w-6/12 text-center grid grid-cols content-center'>
+                                <h1 className='md:text-5xl'>OUR BEST CHEFS</h1>
                                 <p className='font-bold text-2xl'>{info.name}</p>
                                 <p className='text-xl'>Experience : {info.experience}</p>
                                 <p className='text-xl'>Recipes : {info.recipes}</p>
-                                <p>{info.like}</p>
+                                <p className='flex items-center justify-center'><AiFillHeart />{info.like}</p>
                             </div>
                         </div>
                         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

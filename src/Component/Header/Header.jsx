@@ -2,6 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import logo from '../../assets/logo.png'
 
 const Header = () => {
     const { user ,logout} = useContext(AuthContext);
@@ -12,8 +13,8 @@ const Header = () => {
          .then(error =>{console.log(error)})
     }
     return (
-        <div className='flex justify-between px-14 bg-teal-800 py-3 items-center text-white font-bold'>
-            <p className='text-2xl'>Tasty-Meal</p>
+        <div className='justify-between px-14 bg-teal-800 py-1 items-center text-white font-bold'>
+            <img src={logo} alt="" />
             <ul className='flex items-center'>
                 <li className='pr-7'><Link to='/'>Home</Link></li>
                 <li>

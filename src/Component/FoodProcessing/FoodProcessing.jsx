@@ -16,13 +16,13 @@ const [process, setProcess] = useState([]);
             <h1 className="text-center text-4xl py-5">Our Food making process</h1>
             {
                 process.map(info => <div key={info.id}>                
-                <div className='md:flex w-4/5 m-auto '>
-                    <div className="rounder  bg-success text-light d-none d-sm-block">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/dA0VGEbbw4g" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                <div className='md:flex lg:flex w-4/5 m-auto '>
+                    <div className="lg:w-6/12 md:w-6/12 rounder  bg-success text-light d-none d-sm-block">
+                        <iframe  src="https://www.youtube.com/embed/dA0VGEbbw4g" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" className='w-full h-full' allowFullScreen></iframe>
                     </div>
-                    <div className='p-5'>
+                    <div className='md:p-5 lg:p-5 md:w-6/12 lg:w-6/12'>
                         <h3 className="text-xl font-bold">{info.title}</h3>
-                        <p> {info.details}</p>
+                        <p className='text-lg'> {info.details}</p>
                     </div>
                 </div>
                 <div className="w-4/5 m-auto">
