@@ -1,39 +1,53 @@
-import React from 'react';
-import { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { AuthContext } from '../../AuthProvider/AuthProvider';
-import logo from '../../assets/logo.png'
+import React from "react";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import logo from "../../assets/logo.png";
 
 const Header = () => {
-    const { user ,logout} = useContext(AuthContext);
-    console.log(user);
-    const handleLogout = () =>{
-         logout()
-         .then(()=>{})
-         .then(error =>{console.log(error)})
-    }
-    return (
-        <div className='justify-between px-14 bg-teal-800 py-1 items-center text-white font-bold'>
-            <img src={logo} alt="" />
-            <ul className='flex items-center'>
-                <li className='pr-7'><Link to='/'>Home</Link></li>
-                <li>
-                {
-                    user ?
-                        <div className='flex items-center'>
-                        <img src={user.photoURL} className='w-14 h-14 rounded-full' alt="" />
-                           <p className='cursor-pointer ml-7 border-2 rounded py-2 px-3' onClick={handleLogout}>logout</p>
-                           
-                        </div> :
-                        <div>
-                            <Link to='/register'className='pr-7'>Register</Link>
-                            <Link to='/login'>Login</Link>
-                        </div>
-                }
-                </li>
-            </ul>
-        </div>
-    );
+  const { user ,logout} = useContext(AuthContext);
+  console.log(user);
+  const handleLogout = () =>{
+       logout()
+       .then(()=>{})
+       .then(error =>{console.log(error)})
+  }
+  return (
+    <div className="navbar bg-teal-900">
+      <div className="flex-1">
+        <Link to="/">
+          <img src={logo} alt="" />
+        </Link>
+      </div>
+      <div className="flex-none">
+        <ul className="menu menu-horizontal px-1  text-teal-100 text-xl">
+          {user ? (
+              <>
+              <li
+                className="cursor-pointer px-3 py-3 border border-teal-100 rounded"
+                onClick={handleLogout}
+              >
+                logout
+              </li>
+              </>
+          ) : (
+            <>
+              <li>
+                <Link to="/register" className="ml-7">
+                  Register
+                </Link>
+              </li>
+              <li>
+                <Link to="/login" className="ml-7">
+                  Login
+                </Link>
+              </li>
+            </>
+          )}
+        </ul>
+      </div>
+    </div>
+  );
 };
 
 export default Header;

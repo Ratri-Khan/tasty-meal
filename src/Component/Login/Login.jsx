@@ -1,7 +1,7 @@
 import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const {user,signIn} = useContext(AuthContext);
@@ -28,19 +28,20 @@ const Login = () => {
     }
 
     return (
-        <form onSubmit={handleLogin} className='w-2/4 m-auto my-5 border-2 text-center'>
+        <form onSubmit={handleLogin} className='w-2/4 m-auto my-5 text-center mb-16'>
             <p className='text-center text-2xl  mt-5 '>Please Login</p>
             <div className='Control-form'>
                 <p className='text-xl'>Email : </p>
-                <input className='border-2 rounded-xl w-3/4 py-1 bg-teal-100' type="email" name='email' placeholder='Your Email' />
+                <input className='rounded w-3/4 p-2 bg-teal-100' type="email" name='email' placeholder='Your Email' />
             </div>
             <div className='Control-form'>
                 <p className='text-xl'>PassWord: </p>
-                <input className='border-2 rounded-xl w-3/4 py-1 bg-teal-100' type="text" name='password' placeholder='Your password' />
+                <input className='rounded w-3/4 p-2 bg-teal-100' type="text" name='password' placeholder='Your password' />
             </div>
             <div className='Control-form'>
-                <input className='text-white cursor-pointer font-bold my-2 border-2 rounded-xl w-1/4 py-2 bg-teal-800' type="submit" value='Login' />
+                <input className='text-white cursor-pointer font-bold my-2 rounded w-3/4 py-2 bg-teal-900' type="submit" value='Login' />
             </div>
+            <p>Create an new account <Link to="/register"><span className='text-bold text-red'>Sign Up</span></Link></p>
         </form>
     );
 };
