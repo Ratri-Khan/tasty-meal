@@ -41,7 +41,7 @@ const Login = () => {
             <div className='Control-form'>
                 <input className='text-white cursor-pointer font-bold my-2 rounded w-3/4 py-2 bg-teal-900' type="submit" value='Login' />
             </div>
-            <p>Create an new account <Link to="/register"><span className='text-bold text-red'>Sign Up</span></Link></p>
+            <p>Create a new account. <Link to="/register"><span className='font-bold text-red'>Sign Up</span></Link></p>
         </form>
     );
 };
